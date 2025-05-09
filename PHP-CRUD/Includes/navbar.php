@@ -1,10 +1,11 @@
+<link rel="stylesheet" href="../Styles/navbar.css">
+
 <nav class="navbar">
-    <link rel="stylesheet">
     <div class="navbar-wrapper">
 
-        <a class="navbar-brand" href="#">
-            <img src="../ASSETS/WraithLogo.jpg" alt="Logo" class="logo-img">
-        </a>
+        <div class="navbar-logo">
+            <img src="../Assets/logo-nav.png" alt="Logo" class="logo-img">
+        </div>
 
         <div class="navbar-center">
             <a class="nav-link" href="home.php">Home</a>

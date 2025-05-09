@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(100, 108, 255, 0.3);
+  overflow: hidden;
+  border: 1px solid rgba(100, 108, 255, 0.2);
+}
+
+/* Neon text effect */
+.neon-text {
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6;
+}
+
+/* Glowing borders */
+.neon-border {
+  position: relative;
+  border-bottom: 2px solid transparent !important;
+}
+
+.neon-border:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #646cff, transparent);
+  box-shadow: 0 0 5px #646cff, 0 0 10px #646cff;
+}
+
+/* Glowing rows */
+.glow-row {
+  background: rgba(100, 108, 255, 0.1) !important;
+}
+
+.hover-glow:hover {
+  background: rgba(100, 108, 255, 0.2) !important;
+  box-shadow: 0 0 15px rgba(100, 108, 255, 0.3);
+}
+
+/* Glowing buttons */
+.glow-btn {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-btn:hover {
+  box-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+  transform: translateY(-2px);
+}
+
+/* Status badges */
+.glow-green {
+  animation: glow-green 2s infinite alternate;
+}
+
+.glow-red {
+  animation: glow-red 2s infinite alternate;
+}
+
+@keyframes glow-green {
+  from {
+    box-shadow: 0 0 5px #28a745;
+  }
+
+  to {
+    box-shadow: 0 0 15px #28a745, 0 0 20px #28a745;
+  }
+}
+
+@keyframes glow-red {
+  from {
+    box-shadow: 0 0 5px #dc3545;
+  }
+
+  to {
+    box-shadow: 0 0 15px #dc3545, 0 0 20px #dc3545;
+  }
+}
+
+/* Table styling */
+.table {
+  color: #fff;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table thead th {
+  border: none;
+  padding: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.table tbody td {
+  padding: 12px 15px;
+  vertical-align: middle;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Base button styles */
+.btn {
+  position: relative;
+  border: none;
+  border-radius: 50px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Edit button specific */
+.btn-edit {
+  background: linear-gradient(45deg, #28a745, #3dd66f);
+  color: white;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+}
+
+/* Delete button specific */
+.btn-delete {
+  background: linear-gradient(45deg, #dc3545, #ff6b7d);
+  color: white;
+  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
+}
+
+/* Button gradient overlay */
+.btn-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  opacity: 0;
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+
+/* Sparkle effect */
+.btn-sparkle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  filter: blur(2px);
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* Hover effects */
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-edit:hover {
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.6);
+}
+
+.btn-delete:hover {
+  box-shadow: 0 6px 20px rgba(220, 53, 69, 0.6);
+}
+
+.btn:hover .btn-gradient {
+  opacity: 1;
+  animation: gradientSlide 2s infinite linear;
+}
+
+/* Active/click effects */
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* Sparkle animation */
+.btn:hover .btn-sparkle {
+  animation: sparkle 1.4s ease infinite;
+}
+
+.btn-actions {
+  display: flex;
+  gap: 4px;
+}
+
+/* Animations */
+@keyframes gradientSlide {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes sparkle {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+    left: -10px;
+    top: -10px;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0;
+    left: calc(100% + 10px);
+    top: calc(100% + 10px);
+  }
+}
+
+/* Button text styling */
+.btn-text {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+
+/* Optional: Add icons */
+.btn-text::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.btn-edit .btn-text::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z'/%3E%3C/svg%3E");
+}
+
+.btn-delete .btn-text::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z'/%3E%3C/svg%3E");
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}

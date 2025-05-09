@@ -13,15 +13,15 @@ $user = new User();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage User</title>
     <?php include "../Includes/href.php" ?>
+    <link rel="stylesheet" href="../Styles/list-user.css">
 </head>
 
 <body>
+    <?php include "../Includes/navbar.php" ?>
+
     <div class="container">
         <div class="row">
-            <h1>List of users</h1>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
+            <!-- <div class="col-md-4">
                 <div class="card border-primary">
                     <div class="card-header">
                         Add User
@@ -116,25 +116,25 @@ $user = new User();
                         <?php } ?>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-8">
-                <div class="card border-primary">
-                    <div class="card-header">
+            </div> -->
+            <div>
+                <div class="card border-0">
+                    <div class="card-header bg-transparent p-0">
                         <h4>List of Users</h4>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body p-0">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover" id="myTable">
+                            <table class="table table-hover table-dark m-0" id="myTable">
                                 <thead>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Full Name</th>
-                                        <th scope="col">Username</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col">Address</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Date Created</th>
-                                        <th scope="col">Action</th>
+                                    <tr class="glow-row">
+                                        <th scope="col" class="neon-border">#</th>
+                                        <th scope="col" class="neon-border">Full Name</th>
+                                        <th scope="col" class="neon-border">Username</th>
+                                        <th scope="col" class="neon-border">Email</th>
+                                        <th scope="col" class="neon-border">Address</th>
+                                        <th scope="col" class="neon-border">Status</th>
+                                        <th scope="col" class="neon-border">Date Created</th>
+                                        <th scope="col" class="neon-border">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -143,17 +143,29 @@ $user = new User();
                                     $count = 1;
                                     foreach ($users as $row) {
                                     ?>
-                                        <tr>
-                                            <td><?php echo $count++ ?></td>
-                                            <td><?php echo $row['fname'] . " " . $row['lname']; ?></td>
-                                            <td><?php echo $row['username']; ?></td>
-                                            <td><?php echo $row['email']; ?></td>
-                                            <td><?php echo $row['address']; ?></td>
-                                            <td><?php echo $row['active']; ?></td>
-                                            <td><?php echo $row['date_created']; ?></td>
-                                            <td>
-                                                <a href="list-user.php?edit=<?php echo $row['user_id'] ?>" class="btn btn-success btn-sm">Edit</a>
-                                                <a href="../Controllers/action_user.php?delete=<?php echo $row['user_id'] ?>" class="btn btn-danger btn-sm">Delete</a>
+                                        <tr class="hover-glow">
+                                            <td class="text-center neon-text"><?php echo $count++ ?></td>
+                                            <td class="neon-text"><?php echo $row['fname'] . " " . $row['lname']; ?></td>
+                                            <td class="neon-text"><?php echo $row['username']; ?></td>
+                                            <td class="neon-text"><?php echo $row['email']; ?></td>
+                                            <td class="neon-text"><?php echo $row['address']; ?></td>
+                                            <td class="text-center">
+                                                <span class="badge <?php echo $row['active'] ? 'badge-success glow-green' : 'badge-danger glow-red'; ?>">
+                                                    <?php echo $row['active'] == 1 ? 'Actived' : 'Deactived'; ?>
+                                                </span>
+                                            </td>
+                                            <td class="neon-text"><?php echo $row['date_created']; ?></td>
+                                            <td class="btn-actions">
+                                                <a href="list-user.php?edit=<?php echo $row['user_id'] ?>" class="btn btn-edit">
+                                                    <span class="btn-text">Edit</span>
+                                                    <span class="btn-gradient"></span>
+                                                    <span class="btn-sparkle"></span>
+                                                </a>
+                                                <a href="../Controllers/action_user.php?delete=<?php echo $row['user_id'] ?>" class="btn btn-delete">
+                                                    <span class="btn-text">Delete</span>
+                                                    <span class="btn-gradient"></span>
+                                                    <span class="btn-sparkle"></span>
+                                                </a>
                                             </td>
                                         </tr>
                                     <?php } ?>
