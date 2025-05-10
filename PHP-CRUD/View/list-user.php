@@ -21,10 +21,10 @@ $user = new User();
 
     <div class="container">
         <div class="row">
-            <!-- <div class="col-md-4">
+            <div class="col-md-4">
                 <div class="card border-primary">
-                    <div class="card-header">
-                        Add User
+                    <div class="header-title card-header bg-transparent p-0">
+                        <h4>List of Users</h4>
                     </div>
                     <div class="card-body">
                         <?php if (isset($_GET['edit'])) {
@@ -116,8 +116,8 @@ $user = new User();
                         <?php } ?>
                     </div>
                 </div>
-            </div> -->
-            <div>
+            </div>
+            <div class="col-md-8">
                 <div class="card border-0">
                     <div class="card-header bg-transparent p-0">
                         <h4>List of Users</h4>

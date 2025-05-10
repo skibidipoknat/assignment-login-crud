@@ -15,8 +15,8 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Hello, I'm <span class="highlight">John Tapang</span></h1>
-            <p>Web Developer | Designer | Creative Thinker</p>
+            <h1>Welcome to <span class="highlight">User Management</span></h1>
+            <p>Efficiently controlling access, roles, and user data across your system</p>
         </div>
     </section>
 </body>

@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+.header-title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .container {
   width: 100%;
   height: 100vh;
@@ -202,11 +209,6 @@
 /* Sparkle animation */
 .btn:hover .btn-sparkle {
   animation: sparkle 1.4s ease infinite;
-}
-
-.btn-actions {
-  display: flex;
-  gap: 4px;
 }
 
 /* Animations */
